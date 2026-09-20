@@ -15,6 +15,7 @@ export interface ThemeColors {
   primarySoft: string;
   contrast: string;
   contrastHover: string;
+  accent: string;
 
   // Surfaces
   background: string;
@@ -38,6 +39,7 @@ export interface ThemeColors {
 
   // Overlays
   overlay: string;
+  overlaySoft: string;
 }
 
 export interface ThemeShadows {
@@ -54,6 +56,7 @@ const lightColors: ThemeColors = {
   primarySoft: "#e6f0fd", // Active nav pill background
   contrast: "#152f4c", // Strong fill: active Light/Dark toggle, hero heading
   contrastHover: "#0e2238",
+  accent: "#fbbf24", // Sun / moon on the active theme segment
 
   // Surfaces
   background: "#f8fafc", // Page background
@@ -83,6 +86,7 @@ const lightColors: ThemeColors = {
 
   // Overlays
   overlay: "rgba(255, 255, 255, 0.85)", // Favourite (heart) button on card images
+  overlaySoft: "rgba(255, 255, 255, 0.6)", // Hero text panel
 };
 
 const darkColors: ThemeColors = {
@@ -92,6 +96,7 @@ const darkColors: ThemeColors = {
   primarySoft: "#172b4d",
   contrast: "#e2e8f0", // Near-white fill where light mode uses navy
   contrastHover: "#f8fafc",
+  accent: "#f59e0b", // Deeper amber so it reads on the near-white segment
 
   // Surfaces
   background: "#0b1220",
@@ -121,20 +126,21 @@ const darkColors: ThemeColors = {
 
   // Overlays
   overlay: "rgba(15, 23, 42, 0.75)",
+  overlaySoft: "rgba(15, 23, 42, 0.5)",
 };
 
 const lightShadows: ThemeShadows = {
-  header: "0 1px 3px rgba(15, 36, 64, 0.08)",
-  card: "0 1px 3px rgba(15, 36, 64, 0.06)",
-  cardHover: "0 8px 20px rgba(15, 36, 64, 0.12)",
-  search: "0 8px 24px rgba(15, 36, 64, 0.14)",
+  header: "0 0.0625rem 0.1875rem rgba(15, 36, 64, 0.08)",
+  card: "0 0.0625rem 0.1875rem rgba(15, 36, 64, 0.06)",
+  cardHover: "0 0.5rem 1.25rem rgba(15, 36, 64, 0.12)",
+  search: "0 0.5rem 1.5rem rgba(15, 36, 64, 0.14)",
 };
 
 const darkShadows: ThemeShadows = {
-  header: "0 1px 3px rgba(0, 0, 0, 0.4)",
-  card: "0 1px 3px rgba(0, 0, 0, 0.35)",
-  cardHover: "0 8px 20px rgba(0, 0, 0, 0.5)",
-  search: "0 8px 24px rgba(0, 0, 0, 0.55)",
+  header: "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.4)",
+  card: "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.35)",
+  cardHover: "0 0.5rem 1.25rem rgba(0, 0, 0, 0.5)",
+  search: "0 0.5rem 1.5rem rgba(0, 0, 0, 0.55)",
 };
 
 // ---------------------------------------------------------------------------
@@ -173,6 +179,7 @@ const base = {
   },
 
   spacing: {
+    xxs: "0.25rem",
     xs: "0.5rem",
     s: "0.75rem",
     m: "1rem",
@@ -182,29 +189,31 @@ const base = {
 
   // Measured from the mockups (list page rendered at ~1536px wide)
   sizes: {
-    headerHeight: "60px",
-    heroHeight: "270px",
-    searchBarHeight: "48px",
-    buttonHeight: "40px", // Search button
-    iconButtonSize: "32px", // Language / Light-Dark toggle pills, heart button
-    cardImageHeight: "100px", // Country, city and place cards on the home page
-    cardImageHeightLarge: "160px", // Place cards on the details page
-    detailImageHeight: "340px", // Hero image on the details page
-    mapHeight: "350px",
-    flagWidth: "28px", // Flag on country cards
-    flagWidthLarge: "56px", // Flag next to the page title on details pages
+    headerHeight: "3.75rem",
+    heroHeight: "16.875rem",
+    searchBarHeight: "3rem",
+    buttonHeight: "2.5rem", // Search button
+    navItemHeight: "2.5rem", // Mobile nav links and the burger stripe/button
+    iconButtonSize: "2rem", // Heart button
+    pillHeight: "2.25rem", // Language / Light-Dark toggle pills
+    cardImageHeight: "6.25rem", // Country, city and place cards on the home page
+    cardImageHeightLarge: "10rem", // Place cards on the details page
+    detailImageHeight: "21.25rem", // Hero image on the details page
+    mapHeight: "21.875rem",
+    flagWidth: "1.75rem", // Flag on country cards
+    flagWidthLarge: "3.5rem", // Flag next to the page title on details pages
   },
 
   maxWidths: {
-    content: "1250px",
-    heroText: "380px", // Hero heading / intro paragraph column
+    content: "78.125rem",
+    heroText: "23.75rem", // Hero heading / intro paragraph column
   },
 
   radii: {
-    s: "6px", // Badges
-    m: "10px", // Buttons, nav pills, cards
-    l: "14px", // Search bar, hero image, map
-    pill: "9999px", // Light / Dark toggle
+    s: "0.375rem", // Badges
+    m: "0.625rem", // Buttons, nav pills, cards
+    l: "0.875rem", // Search bar, hero image, map
+    pill: "9999rem", // Light / Dark toggle
     round: "50%", // Heart button
   },
 
@@ -214,9 +223,9 @@ const base = {
   },
 
   breakpoints: {
-    mobile: "480px",
-    tablet: "768px",
-    desktop: "1024px",
+    mobile: "30rem",
+    tablet: "48rem",
+    desktop: "64rem",
   },
 };
 
