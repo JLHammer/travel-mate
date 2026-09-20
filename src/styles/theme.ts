@@ -161,12 +161,15 @@ const base = {
     relaxed: 1.65, // Long paragraphs on the details page
   },
 
+  // Measured from the list mockup: xs nav/links/placeholder, s card titles
+  // and hero intro, m section headings, l logo, xxl hero title
   fontSizes: {
     xs: "0.875rem",
     s: "1rem",
     m: "1.25rem",
     l: "1.5rem",
     xl: "1.875rem",
+    xxl: "2.625rem",
   },
 
   spacing: {
